@@ -7,12 +7,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import List from './component/List';
 import Add from './component/Add';
 import Update from './component/Update';
+import Login from './component/Login';
 const Stack = createStackNavigator()
 export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer >
-        <Stack.Navigator >
+        <Stack.Navigator initialRouteName='List'>
           <Stack.Screen 
           name='List'
           component={List}
@@ -26,6 +27,11 @@ export default function App() {
           <Stack.Screen 
           name='Update'
           component={Update}
+          options={{headerShown:true}}
+          />
+          <Stack.Screen 
+          name='Login'
+          component={Login}
           options={{headerShown:true}}
           />
         </Stack.Navigator>
